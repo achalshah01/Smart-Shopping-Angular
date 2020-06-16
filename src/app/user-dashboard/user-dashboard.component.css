@@ -1,0 +1,39 @@
+.btn:hover {
+  background: red;
+}
+
+.viewThisResult {
+  bottom: 8px;
+  left: 380px;
+}
+
+.resultContainer {
+  height: 40px;
+}
+
+.resultContainer .hideableButton {
+  display: none;
+}
+.resultContainer:hover .hideableButton {
+  display: inline;
+}
+
+.heart {
+  fill: red;
+  position: relative;
+  top: 5px;
+  width: 50px;
+  animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+}

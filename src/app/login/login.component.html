@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+        <div class="form-group col-md-4">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="name"
+            required
+            formControlName="email"
+          />
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            required
+          />
+        </div>
+
+        <div class="form-group col-md-5">
+          <label for="Remember Me">Remember Me ?</label>
+          <select class="form-control" id="remember" required>
+            <option *ngFor="let rem of rememberMe" [value]="pow">{{
+              rem
+            }}</option>
+          </select>
+        </div>
+
+        <div class="col-md-12">
+          <div class="col-md-4">
+            <button
+              type="submit"
+              class="btn btn-success"
+              [disabled]="!credentialsForm.valid"
+            >
+              Login
+            </button>
+          </div>
+
+          <div *ngIf="this.loginSuccess === false" class="col-md-8">
+            <div class="panel panel-danger">
+              <div class="panel-heading">Username/Password is Incorrect</div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
