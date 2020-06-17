@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h2>Order History</h2>
+    <hr />
+    <div class="row">
+      <div class="col-md-2"><strong>Order Date</strong></div>
+      <div class="col-md-3"><strong>Order ID</strong></div>
+      <div class="col-md-5"><strong>Products</strong></div>
+      <div class="col-md-2"><strong>Amount</strong></div>
+    </div>
+    <hr />
+    <div *ngFor="let order of ordersList" class="row">
+      <hr />
+      <div class="col-md-2">
+        <strong>{{ order.orderDate }}</strong>
+      </div>
+      <div class="col-md-3">
+        <strong>{{ order._id }}</strong>
+      </div>
+      <div class="col-md-5">
+        <div *ngFor="let product of order.product">
+          <strong>{{ product.name }} </strong>
+        </div>
+      </div>
+
+      <div class="col-md-2">${{ order.totalCost }}</div>
+    </div>
+    <hr />
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+      crossorigin="anonymous"
+    ></script>
+
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar my-navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Smart-Mart</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div
+            class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1"
+          >
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li>
+                <a routerLink="/cart">Cart</a>
+              </li>
+              <li>
+                <a routerLink="/orders">Orders</a>
+              </li>
+              <li class="dropdown">
+                <a
+                  href="https://www.jquery-az.com/bootstrap-tips-tutorials/"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Account Settings <span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      href="https://www.jquery-az.com/bootstrap-carousel-5-single-multiple-horizontal-and-vertical-sliding-demos/"
+                      >Carousel</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.jquery-az.com/bootstrap-form-customized-styles-6-online-examples/"
+                      >Forms</a
+                    >
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <a
+                      href="https://www.jquery-az.com/bootstrap-select-5-beautiful-styles/"
+                      >Select</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Find topics"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Go</button>
+              <button class="btn btn-primary" (click)="loadLogin()">
+                Customer Login
+              </button>
+              <button class="btn btn-primary" routerLink="vendorLogin">
+                Vendor Login
+              </button>
+              <button class="btn btn-success" (click)="signUp()">
+                Sign Up
+              </button>
+            </form>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+    </div>
+  </body>
+</html>

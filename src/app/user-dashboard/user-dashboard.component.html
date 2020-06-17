@@ -1,0 +1,90 @@
+<div style="text-align:center">
+  <h1>Vendor DashBoard</h1>
+
+  <button class="btn btn-success" (click)="onclickCreateProduct()">
+    Create Product
+  </button>
+
+  <button
+    class="btn btn-primary"
+    (click)="getAllProducts()"
+    style="margin-left: 5%"
+  >
+    Get All Products
+  </button>
+
+  <button
+    class="btn btn-primary"
+    (click)="navigateToPayments()"
+    style="margin-left: 5%"
+  >
+    Make Payments
+  </button>
+</div>
+
+<div
+  *ngIf="!showCreateProductform"
+  style=" padding: 15px;
+text-align: left;"
+>
+  <div *ngFor="let p of products" class="col-md-12 resultContainer">
+    <div class="col-md-2">
+      {{ p.name }}
+    </div>
+    <div class="col-md-2">${{ p.price }}</div>
+    <div class="col-md-2">
+      <button
+        class="btn btn-warning hideableButton"
+        (click)="deleteProduct(p._id)"
+      >
+        <span>&#10060;</span>
+        Delete Product
+      </button>
+    </div>
+
+    <div class="col-md-2">
+      <button
+        class="btn btn-success hideableButton "
+        (click)="showUpdateProductForm(p)"
+      >
+        <span> &#9998; </span>
+        Edit
+      </button>
+    </div>
+
+    <div class="col-md-2">
+      <button
+        class="btn btn-success hideableButton "
+        (click)="addItemToCart(p)"
+      >
+        <span class="glyphicon glyphicon-shopping-cart heart"></span>
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showCreateProductform">
+  <label for="name"> Name</label>
+  <input type="text" name="name" [(ngModel)]="name" />
+  <label for="price"> Price</label>
+  <input type="text" name="price" [(ngModel)]="price" />
+
+  <button type="submit" (click)="createProduct()">Submit</button>
+</div>
+
+<div *ngIf="showEditForm">
+  <label for="name"> Name</label>
+  <input type="text" name="name" [(ngModel)]="name" value="p.name" />
+  <label for="price"> Price</label>
+  <input type="text" name="price" [(ngModel)]="price" value="p.price" />
+  <label for="price"> ID</label>
+  <input type="text" name="productId" [(ngModel)]="productId" value="p._id" />
+  <button
+    type="submit"
+    (click)="updateProduct(name, price, productId)"
+    class="btn btn-success"
+  >
+    Update
+  </button>
+</div>
